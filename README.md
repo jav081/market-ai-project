@@ -107,11 +107,19 @@ print(summary)
 ### Run Examples
 
 ```bash
-# Run main demo
+# Run quick demo
+python demo.py
+
+# Run main application demo
 python main.py
 
-# Run all examples
+# Run all feature examples
 python examples.py
+
+# Analyze real stocks (requires internet)
+python real_market_example.py AAPL
+python real_market_example.py TSLA
+python real_market_example.py SPY
 ```
 
 ## Module Documentation
@@ -230,6 +238,28 @@ Predicted Price: $153.71
 4. **Risk Management**: Historical volatility and drawdown analysis
 5. **Strategy Development**: Backtesting with ML predictions
 
+## Real-World Integration
+
+The `real_market_example.py` script demonstrates integration with real market data:
+
+```python
+# Fetch and analyze real stock data
+python real_market_example.py AAPL
+
+# Or use the module in your code
+from real_market_example import get_stock_data, analyze_stock
+
+data = get_stock_data('MSFT', period='1y')
+analyze_stock('MSFT', sentiment_texts=[...])
+```
+
+You can integrate with:
+- **Yahoo Finance** (yfinance) - Historical price data
+- **Twitter API** - Real-time social sentiment
+- **Reddit API** - Community sentiment analysis
+- **News APIs** - News sentiment tracking
+- **Trading Platforms** - Automated trading execution
+
 ## Requirements
 
 - Python 3.7+
@@ -248,13 +278,16 @@ Predicted Price: $153.71
 
 ```
 market-ai-project/
-├── main.py                  # Main application & integration
-├── sentiment_analyzer.py    # Sentiment analysis module
-├── chart_analyzer.py        # Chart reading module
-├── historical_learner.py    # ML prediction module
-├── examples.py              # Usage examples
-├── requirements.txt         # Dependencies
-└── README.md               # Documentation
+├── main.py                    # Main application & integration
+├── sentiment_analyzer.py      # Sentiment analysis module
+├── chart_analyzer.py          # Chart reading module
+├── historical_learner.py      # ML prediction module
+├── examples.py                # Usage examples
+├── demo.py                    # Quick demo script
+├── real_market_example.py     # Real market data integration
+├── requirements.txt           # Dependencies
+├── .gitignore                # Git ignore rules
+└── README.md                 # Documentation
 ```
 
 ## Contributing
